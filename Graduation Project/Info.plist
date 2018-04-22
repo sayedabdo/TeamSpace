@@ -52,5 +52,9 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+	<key>NSCameraUsageDescription</key>
+	<string>Allaw to take a photo</string>
+	<key>NSAppleMusicUsageDescription</key>
+	<string>Allaw to choose a photo</string>
 </dict>
 </plist>

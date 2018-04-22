@@ -64,9 +64,6 @@ class LoginVC: UIViewController,UITextFieldDelegate {
                 
                 
                 for aDic in arrayOfDic{
-                    print("//////")
-                    print(aDic["E_mail"]!)
-                    print(aDic["Password"]!)
                     let e_mail = aDic["E_mail"]!
                     let password = aDic["Password"]!
                     if(self.emailTextField.text!    == e_mail   as! String){
@@ -76,6 +73,7 @@ class LoginVC: UIViewController,UITextFieldDelegate {
                         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
                         
                         let nextViewController = storyBoard.instantiateViewController(withIdentifier: "profile") as! profileVC
+                        nextViewController.email = self.emailTextField.text!
                         self.present(nextViewController, animated:true, completion:nil)
                         
                      return

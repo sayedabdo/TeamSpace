@@ -16,11 +16,13 @@ class SignupVC: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var confirmTextField: UITextField!
     @IBOutlet weak var genderTextField: UITextField!
+    var emailexist = 0
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
     @IBAction func signupbuttonpressed(_ sender: Any) {
+        emailexist = 0
         //check if the email textfield is empty or not
         if(emailTextField.text?.isEmpty)!{
             displayAlertMessage(title: "Error", messageToDisplay: "email is empty 😡😡😡", titleofaction: "Try Again")
@@ -78,17 +80,37 @@ class SignupVC: UIViewController {
                 "Password"     : "\(passwordTextField.text!)",
                 "Gender"       : "\(genderTextField.text!)"
         ]
-        Alamofire.request(url, method: .post, parameters: params, encoding: JSONEncoding.default)
-            .responseJSON { response in
-            //(request, response, data, error) in
-            
-           // var json = JSON(data: data!)
-            
-          //  println(json)
-           // println(json["productList"][1])
-                print("XXXXXXXXXX")
-                print("\(self.passwordTextField.text!)")
+        
+        
+        let userurl = "http://team-space.000webhostapp.com/index.php/api/users"
+        Alamofire.request(userurl).responseJSON { response in
+            let result = response.result
+            //print("the result is : \(result.value)")
+            if let arrayOfDic = result.value as? [Dictionary<String, AnyObject>] {
+                for aDic in arrayOfDic{
+                    let e_mail = aDic["E_mail"]!
+                    if(self.emailTextField.text! == e_mail   as! String){
+                        self.emailexist = 1
+                        print("\(e_mail)")
+                        print("\(self.emailexist)")
+                       self.displayAlertMessage(title: "Error", messageToDisplay: "This Email is Exist 😡😡😡😡", titleofaction: "Try Again")
+                        return
+                    }
+                }
+                if(self.emailexist != 1){
+                    Alamofire.request(url, method: .post, parameters: params, encoding: JSONEncoding.default)
+                        .responseJSON { response in
+                            
+                            print("\(self.passwordTextField.text!)")
+                            let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+                            
+                            let nextViewController = storyBoard.instantiateViewController(withIdentifier: "profile") as! profileVC
+                            self.present(nextViewController, animated:true, completion:nil)
+                    }
+                }
+            }
         }
+        
         
     }
     //function used to check is email valid or not
