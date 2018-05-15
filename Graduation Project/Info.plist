@@ -56,5 +56,7 @@
 	<string>Allaw to take a photo</string>
 	<key>NSAppleMusicUsageDescription</key>
 	<string>Allaw to choose a photo</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Allaw to choose a photo</string>
 </dict>
 </plist>

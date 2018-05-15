@@ -101,7 +101,6 @@ class SignupVC: UIViewController {
                     Alamofire.request(url, method: .post, parameters: params, encoding: JSONEncoding.default)
                         .responseJSON { response in
                             
-                            print("\(self.passwordTextField.text!)")
                             let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
                             
                             let nextViewController = storyBoard.instantiateViewController(withIdentifier: "profile") as! profileVC

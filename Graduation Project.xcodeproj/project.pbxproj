@@ -7,8 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1604483F20A8AF020091B0E9 /* communitesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1604483E20A8AF020091B0E9 /* communitesCell.swift */; };
+		1608A0A420936A070099D7BC /* CreatecommunityVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1608A0A320936A070099D7BC /* CreatecommunityVC.swift */; };
+		1608A0A8209373250099D7BC /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1608A0A7209373250099D7BC /* Info.plist */; };
 		160FD119204DC0F2003DA7FD /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160FD118204DC0F2003DA7FD /* LoginVC.swift */; };
 		160FD11B204DC3C8003DA7FD /* inserttextfield.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160FD11A204DC3C8003DA7FD /* inserttextfield.swift */; };
+		1615ADC820A7E50000CAE78F /* CommunitesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1615ADC720A7E50000CAE78F /* CommunitesVC.swift */; };
 		16170905205F15C000329AB3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16170904205F15C000329AB3 /* Constants.swift */; };
 		166477D62079EFFC0045D638 /* SignupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 166477D52079EFFC0045D638 /* SignupVC.swift */; };
 		16656F102086CD3800C18A27 /* profileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16656F0F2086CD3800C18A27 /* profileVC.swift */; };
@@ -35,8 +39,12 @@
 
 /* Begin PBXFileReference section */
 		038E5B033186ED666504A596 /* Pods_Graduation_Project.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Graduation_Project.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1604483E20A8AF020091B0E9 /* communitesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = communitesCell.swift; sourceTree = "<group>"; };
+		1608A0A320936A070099D7BC /* CreatecommunityVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatecommunityVC.swift; sourceTree = "<group>"; };
+		1608A0A7209373250099D7BC /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		160FD118204DC0F2003DA7FD /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		160FD11A204DC3C8003DA7FD /* inserttextfield.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = inserttextfield.swift; sourceTree = "<group>"; };
+		1615ADC720A7E50000CAE78F /* CommunitesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommunitesVC.swift; sourceTree = "<group>"; };
 		16170904205F15C000329AB3 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		166477D52079EFFC0045D638 /* SignupVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupVC.swift; sourceTree = "<group>"; };
 		16656F0F2086CD3800C18A27 /* profileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = profileVC.swift; sourceTree = "<group>"; };
@@ -64,7 +72,6 @@
 		C27ADD72201F9B5200E89C9B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C27ADD74201F9B5200E89C9B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C27ADD77201F9B5200E89C9B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		C27ADD79201F9B5200E89C9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +86,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1608A0A22093696B0099D7BC /* Community Module */ = {
+			isa = PBXGroup;
+			children = (
+				1608A0A320936A070099D7BC /* CreatecommunityVC.swift */,
+				1615ADC720A7E50000CAE78F /* CommunitesVC.swift */,
+				1604483E20A8AF020091B0E9 /* communitesCell.swift */,
+			);
+			name = "Community Module";
+			sourceTree = "<group>";
+		};
 		160FD117204DC0BF003DA7FD /* Login Module */ = {
 			isa = PBXGroup;
 			children = (
@@ -229,6 +246,7 @@
 			children = (
 				C27ADD71201F9B5200E89C9B /* Main.storyboard */,
 				C27ADD76201F9B5200E89C9B /* LaunchScreen.storyboard */,
+				1608A0A22093696B0099D7BC /* Community Module */,
 				C2138DF2208A0EF1006EBB66 /* Voting Module */,
 				160FD117204DC0BF003DA7FD /* Login Module */,
 				C25F20FE202C5FD600028C82 /* Event Module */,
@@ -283,7 +301,7 @@
 		C27ADD83201F9C4600E89C9B /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				C27ADD79201F9B5200E89C9B /* Info.plist */,
+				1608A0A7209373250099D7BC /* Info.plist */,
 				C27ADD74201F9B5200E89C9B /* Assets.xcassets */,
 				C22519E020236BF4003016BC /* fa-brands-400.ttf */,
 				C22519E120236BF4003016BC /* fa-regular-400.ttf */,
@@ -323,7 +341,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 0830;
-				ORGANIZATIONNAME = "Yasmine Ghazy";
+				ORGANIZATIONNAME = "Sayed Abdo";
 				TargetAttributes = {
 					C27ADD69201F9B5200E89C9B = {
 						CreatedOnToolsVersion = 8.3.3;
@@ -355,6 +373,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1608A0A8209373250099D7BC /* Info.plist in Resources */,
 				C27ADD78201F9B5200E89C9B /* LaunchScreen.storyboard in Resources */,
 				C27ADD75201F9B5200E89C9B /* Assets.xcassets in Resources */,
 				C27ADD73201F9B5200E89C9B /* Main.storyboard in Resources */,
@@ -422,6 +441,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1604483F20A8AF020091B0E9 /* communitesCell.swift in Sources */,
 				160FD11B204DC3C8003DA7FD /* inserttextfield.swift in Sources */,
 				C22519DD202352EF003016BC /* CreateMeetingVC.swift in Sources */,
 				C25F2103202C603600028C82 /* HomeVC.swift in Sources */,
@@ -440,6 +460,8 @@
 				C20136982024D48500AB0816 /* MeetingSettingsVC.swift in Sources */,
 				C27ADD6E201F9B5200E89C9B /* AppDelegate.swift in Sources */,
 				C20136962024BC2C00AB0816 /* CircleBtn.swift in Sources */,
+				1615ADC820A7E50000CAE78F /* CommunitesVC.swift in Sources */,
+				1608A0A420936A070099D7BC /* CreatecommunityVC.swift in Sources */,
 				C2138DF7208A0F76006EBB66 /* AllVoteVC.swift in Sources */,
 				C25F2108202C612600028C82 /* AllEventsVC.swift in Sources */,
 			);
