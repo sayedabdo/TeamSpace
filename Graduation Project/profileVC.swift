@@ -12,6 +12,10 @@ import Alamofire
 class profileVC: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate{
     
     
+    
+    
+    
+    
     var email = ""
     let picker = UIImagePickerController()
     var workasarray : [String] = []
@@ -29,6 +33,7 @@ class profileVC: UIViewController,UIImagePickerControllerDelegate,UINavigationCo
         super.viewDidLoad()
         worktableview.delegate = self
         worktableview.dataSource = self
+        
         let url = "http://team-space.000webhostapp.com/index.php/api/users"
         Alamofire.request(url).responseJSON { response in
             let result = response.result
@@ -46,6 +51,31 @@ class profileVC: UIViewController,UIImagePickerControllerDelegate,UINavigationCo
                         let work = aDic["Work"]! as? String
                         self.workasarray = (work?.components(separatedBy: "@"))!
                         print(self.workasarray)
+                        
+                        
+                        
+                        
+                        
+                        let alert = UIAlertController(title: "question", message: "want yo make update? 😊😊😊", preferredStyle: .alert)
+                        
+                        alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { action in
+                            
+                        }))
+                        alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: { action in
+                            
+                            
+                            let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+                            let nextViewController = storyBoard.instantiateViewController(withIdentifier: "CommunitesVC") as! CommunitesVC
+                            self.present(nextViewController, animated:true, completion:nil)
+                            
+                        }))
+                        
+                        self.present(alert, animated: true)
+
+                        
+                        
+                        
+                        
                         return
                     }
                 }
@@ -58,14 +88,8 @@ class profileVC: UIViewController,UIImagePickerControllerDelegate,UINavigationCo
         
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    //karem.elhedaby@gmail.com
-    @IBAction func Savebtn(_ sender: Any) {
-        
-    }
+
+    @IBAction func Savebtn(_ sender: Any) {}
     
     
     @IBAction func changeimage(_ sender: Any) {

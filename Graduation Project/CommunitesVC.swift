@@ -23,11 +23,11 @@ class CommunitesVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
             tableview.reloadData()
         }
     }
-    var arrayofimages : [String] = []{
-        didSet{
-            tableview.reloadData()
-        }
-    }
+//    var arrayofimages : [String] = []{
+//        didSet{
+//            tableview.reloadData()
+//        }
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,6 +52,7 @@ class CommunitesVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
         return 1
     }
     func tableView(_ tableview: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print("the count is : ",arrayofnames.count)
         return arrayofnames.count
     }
     
@@ -59,9 +60,8 @@ class CommunitesVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableview: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableview.dequeueReusableCell(withIdentifier: "communitesCell") as? communitesCell else { return UITableViewCell()
         }
-       // cell..text = arrayofnames[indexPath.row] as! String
         cell.communityname.text = arrayofnames[indexPath.row] as! String
-        cell.communityDescription.text = arrayofnames[indexPath.row] as! String
+        cell.communityDescription.text =  arrayofnamesdescription[indexPath.row] as! String
         return cell
     }
     

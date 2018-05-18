@@ -37,10 +37,10 @@ class CreatecommunityVC: UIViewController ,UIImagePickerControllerDelegate,UINav
         Alamofire.request(communityurl, method: .post, parameters: params, encoding: JSONEncoding.default)
             .responseJSON { response in
                 print(response.result)
-            //    let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+                let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
                 
-               // let nextViewController = storyBoard.instantiateViewController(withIdentifier: "CommunitesVC") as! CommunitesVC
-             //   self.present(nextViewController, animated:true, completion:nil)
+                let nextViewController = storyBoard.instantiateViewController(withIdentifier: "CommunitesVC") as! CommunitesVC
+                self.present(nextViewController, animated:true, completion:nil)
         }
         
     }

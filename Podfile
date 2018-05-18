@@ -9,4 +9,5 @@ target 'Graduation Project' do
 
   # Pods for Graduation Project
  pod 'Alamofire'
-end
+ pod 'Cloudinary', '~> 2.0'
+ end
