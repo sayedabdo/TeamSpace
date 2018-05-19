@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="z6N-Ay-wRh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="y7s-se-kV8">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -3122,6 +3122,9 @@ UGFzc3dvcmQDA
                                     <segment title="Communities"/>
                                 </segments>
                                 <color key="tintColor" red="0.23529411759999999" green="0.47450980390000003" blue="0.59607843140000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="changecommunities:" destination="z6N-Ay-wRh" eventType="valueChanged" id="yam-ib-Uwd"/>
+                                </connections>
                             </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wMm-8c-ix4">
                                 <rect key="frame" x="0.0" y="568" width="375" height="48"/>
@@ -3204,6 +3207,7 @@ UGFzc3dvcmQDA
                     </view>
                     <tabBarItem key="tabBarItem" title="Community" id="iyi-rk-wi7"/>
                     <connections>
+                        <outlet property="displaycommuniytindex" destination="iqF-nr-IuT" id="jBS-ow-3Ka"/>
                         <outlet property="tableview" destination="kDr-aR-wlc" id="IWc-6O-8ZR"/>
                     </connections>
                 </viewController>
