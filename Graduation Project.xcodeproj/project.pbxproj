@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1604483F20A8AF020091B0E9 /* communitesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1604483E20A8AF020091B0E9 /* communitesCell.swift */; };
+		160709F020B271E2002D8700 /* CommunityStructureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160709EF20B271E2002D8700 /* CommunityStructureCell.swift */; };
+		160709F220B28A65002D8700 /* communitystructureVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160709F120B28A65002D8700 /* communitystructureVC.swift */; };
 		1608A0A420936A070099D7BC /* CreatecommunityVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1608A0A320936A070099D7BC /* CreatecommunityVC.swift */; };
 		1608A0A8209373250099D7BC /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1608A0A7209373250099D7BC /* Info.plist */; };
 		160FD119204DC0F2003DA7FD /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160FD118204DC0F2003DA7FD /* LoginVC.swift */; };
@@ -40,6 +42,8 @@
 /* Begin PBXFileReference section */
 		038E5B033186ED666504A596 /* Pods_Graduation_Project.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Graduation_Project.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1604483E20A8AF020091B0E9 /* communitesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = communitesCell.swift; sourceTree = "<group>"; };
+		160709EF20B271E2002D8700 /* CommunityStructureCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommunityStructureCell.swift; sourceTree = "<group>"; };
+		160709F120B28A65002D8700 /* communitystructureVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = communitystructureVC.swift; sourceTree = "<group>"; };
 		1608A0A320936A070099D7BC /* CreatecommunityVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatecommunityVC.swift; sourceTree = "<group>"; };
 		1608A0A7209373250099D7BC /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		160FD118204DC0F2003DA7FD /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
@@ -92,6 +96,8 @@
 				1608A0A320936A070099D7BC /* CreatecommunityVC.swift */,
 				1615ADC720A7E50000CAE78F /* CommunitesVC.swift */,
 				1604483E20A8AF020091B0E9 /* communitesCell.swift */,
+				160709EF20B271E2002D8700 /* CommunityStructureCell.swift */,
+				160709F120B28A65002D8700 /* communitystructureVC.swift */,
 			);
 			name = "Community Module";
 			sourceTree = "<group>";
@@ -463,7 +469,9 @@
 				1615ADC820A7E50000CAE78F /* CommunitesVC.swift in Sources */,
 				1608A0A420936A070099D7BC /* CreatecommunityVC.swift in Sources */,
 				C2138DF7208A0F76006EBB66 /* AllVoteVC.swift in Sources */,
+				160709F220B28A65002D8700 /* communitystructureVC.swift in Sources */,
 				C25F2108202C612600028C82 /* AllEventsVC.swift in Sources */,
+				160709F020B271E2002D8700 /* CommunityStructureCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
