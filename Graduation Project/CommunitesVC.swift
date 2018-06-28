@@ -114,7 +114,8 @@ class CommunitesVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     @IBAction func createcommunity(_ sender: Any) {
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let nextViewController = storyBoard.instantiateViewController(withIdentifier: "CreatecommunityVC") as! CreatecommunityVC
-        self.present(nextViewController, animated:true, completion:nil)    }
+        self.present(nextViewController, animated:true, completion:nil)
+    }
     
     @IBAction func changecommunities(_ sender: Any) {
         arrayofnames.removeAll()
@@ -131,8 +132,7 @@ class CommunitesVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
                 for aDic in arrayOfDic{
                         let user_id = (aDic["user_id"]as! NSString).doubleValue
                          if(self.current_user == user_id){
-                            print("ttttttt")
-                            let community_id = (aDic["Groups_Community_Community_id1"]as! NSString).doubleValue
+                            let community_id = (aDic["Groups_Community_Community_id"]as! NSString).doubleValue
                             self.arrayofcommunityid.append(community_id)
                         }
                     }

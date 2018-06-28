@@ -11,11 +11,7 @@ import Alamofire
 
 class profileVC: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate{
     
-    
-    
-    
-    
-    
+    var id = 0
     var email = ""
     let picker = UIImagePickerController()
     var workasarray : [String] = []
@@ -27,12 +23,19 @@ class profileVC: UIViewController,UIImagePickerControllerDelegate,UINavigationCo
     @IBOutlet weak var genderTextField: UITextField!
     @IBOutlet weak var birthdateTextField: UITextField!
     
-    @IBOutlet weak var worktableview: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        worktableview.delegate = self
-        worktableview.dataSource = self
+        
+        
+        imagePicked.layer.borderWidth = 3.0
+        imagePicked.layer.masksToBounds = false
+        imagePicked.layer.borderColor = UIColor.white.cgColor
+        imagePicked.layer.cornerRadius = imagePicked.frame.size.width / 2
+        imagePicked.clipsToBounds = true
+        
+        
+        
         
         let url = "http://team-space.000webhostapp.com/index.php/api/users"
         Alamofire.request(url).responseJSON { response in
@@ -139,24 +142,4 @@ class profileVC: UIViewController,UIImagePickerControllerDelegate,UINavigationCo
     }
     
     
-}
-extension profileVC : UITableViewDelegate, UITableViewDataSource {
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return workasarray.count
-    }
-    
-  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = worktableview.dequeueReusableCell(withIdentifier: "work", for: indexPath)
-    // Configure the cell...
-    cell.textLabel?.text = "sdfsdf"
-    return cell
-   }
-//    
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        }
-
 }

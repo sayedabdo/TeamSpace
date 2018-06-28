@@ -48,7 +48,7 @@ class communitystructureVC: UIViewController, UITableViewDataSource,UITableViewD
             print("the result is : \(result.value)")
             if let arrayOfDic = result.value as? [Dictionary<String, AnyObject>] {
                 for aDic in arrayOfDic{
-                    let community_id = Int((aDic["Community_Community_id1"]as! NSString).doubleValue)
+                    let community_id = Int((aDic["Community_Community_id"]as! NSString).doubleValue)
                         if(community_id == self.communityid){
                             print("nice isa")
                             self.arrayofnames.append(aDic["Group_name"] as! String)
@@ -78,10 +78,10 @@ class communitystructureVC: UIViewController, UITableViewDataSource,UITableViewD
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
-//        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-//        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "CommunityStructureVC") as! communitystructureVC
-//        nextViewController.communityid =  Int(arrayofid[indexPath.row])
-//        self.present(nextViewController, animated:true, completion:nil)
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "GroupmembersVC") as! GroupmembersVC
+        nextViewController.group_id =  Int(arrayofid[indexPath.row])
+        self.present(nextViewController, animated:true, completion:nil)
         
     }
     
@@ -100,10 +100,10 @@ class communitystructureVC: UIViewController, UITableViewDataSource,UITableViewD
                 print("the result is : \(result.value)")
                 if let arrayOfDic = result.value as? [Dictionary<String, AnyObject>] {
                     for aDic in arrayOfDic{
-                        let community_id = Int((aDic["Groups_Community_Community_id1"]as! NSString).doubleValue)
+                        let community_id = Int((aDic["Groups_Community_Community_id"]as! NSString).doubleValue)
                         if(community_id == self.communityid){
                             print("nice isa")
-                            self.arrayofusersincommunity.append(Int((aDic["user_id"]as! NSString).doubleValue))
+                            self.arrayofusersincommunity.append(Int((aDic["user_idasmember"]as! NSString).doubleValue))
                         }
                     }
                 }
@@ -138,7 +138,7 @@ class communitystructureVC: UIViewController, UITableViewDataSource,UITableViewD
                 print("the result is : \(result1.value)")
                 if let arrayOfDic1 = result1.value as? [Dictionary<String, AnyObject>] {
                     for aDic1 in arrayOfDic1{
-                        let community_id1 = Int((aDic1["Community_Community_id1"]as! NSString).doubleValue)
+                        let community_id1 = Int((aDic1["Community_Community_id"]as! NSString).doubleValue)
                         if(community_id1 == self.communityid){
                             print("nice isa")
                             self.arrayofnames.append(aDic1["Group_name"] as! String)
@@ -151,10 +151,14 @@ class communitystructureVC: UIViewController, UITableViewDataSource,UITableViewD
             }
         }
     }
-    @IBAction func savebtn(_ sender: Any) {
+    @IBAction func back(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
     }
 
     @IBAction func addbtn(_ sender: Any) {
+            let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+            let nextViewController = storyBoard.instantiateViewController(withIdentifier: "CreateGroupVC") as! CreateGroupVC
+            self.present(nextViewController, animated:true, completion:nil)
     }
     func removeDuplicateInts(values: [Int]) -> [Int] {
         // Convert array into a set to get unique values.
@@ -163,4 +167,5 @@ class communitystructureVC: UIViewController, UITableViewDataSource,UITableViewD
         let result = Array<Int>(uniques)
         return result
     }
+    
 }

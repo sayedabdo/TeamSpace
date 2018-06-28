@@ -12,13 +12,21 @@ import Alamofire
 
 class LoginVC: UIViewController,UITextFieldDelegate {
     
+    @IBOutlet weak var logoimage: UIImageView!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordtextfield: UITextField!
     var checkifexist = 0
     override func viewDidLoad() {
         super.viewDidLoad()
         emailTextField.delegate = self
+        logoimage.layer.borderColor = UIColor.white.cgColor
+        logoimage.layer.borderWidth = 3.0
         // Do any additional setup after loading the view.
+        /*logoimage.layer.borderWidth = 1.0
+        logoimage.layer.masksToBounds = false
+        logoimage.layer.borderColor = UIColor.white.cgColor
+        logoimage.layer.cornerRadius = logoimage.frame.size.width / 2
+        logoimage.clipsToBounds = true*/
     }
     
     override func didReceiveMemoryWarning() {
@@ -59,13 +67,10 @@ class LoginVC: UIViewController,UITextFieldDelegate {
             let result = response.result
             print("the result is : \(result.value)")
             if let arrayOfDic = result.value as? [Dictionary<String, AnyObject>] {
-                print("000000000")
-                print(arrayOfDic[0]["User_name"]!)
-                
-                
                 for aDic in arrayOfDic{
                     let e_mail = aDic["E_mail"]!
                     let password = aDic["Password"]!
+                    let user_id =  aDic["User_id"]!
                     if(self.emailTextField.text!    == e_mail   as! String){
                     if(self.passwordtextfield.text! == password as! String){
                      //self.displayAlertMessage(title: "Done", messageToDisplay: "😍😍😍😍", titleofaction: "OK")
@@ -120,5 +125,12 @@ class LoginVC: UIViewController,UITextFieldDelegate {
         }
         alertController.addAction(OKAction)
         self.present(alertController, animated: true, completion:nil)
+    }
+    
+    @IBAction func movetosignup(_ sender: Any) {
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        
+        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "SignupVC") as! SignupVC
+        self.present(nextViewController, animated:true, completion:nil)
     }
 }

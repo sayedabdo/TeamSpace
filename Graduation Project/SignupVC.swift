@@ -10,7 +10,7 @@ import UIKit
 import Alamofire
 
 class SignupVC: UIViewController {
-    
+    @IBOutlet weak var logoimage: UIImageView!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -19,6 +19,8 @@ class SignupVC: UIViewController {
     var emailexist = 0
     override func viewDidLoad() {
         super.viewDidLoad()
+        logoimage.layer.borderColor = UIColor.white.cgColor
+        logoimage.layer.borderWidth = 3.0
     }
     
     @IBAction func signupbuttonpressed(_ sender: Any) {
@@ -146,4 +148,11 @@ class SignupVC: UIViewController {
         alertController.addAction(OKAction)
         self.present(alertController, animated: true, completion:nil)
     }
+    @IBAction func movetologin(_ sender: Any) {
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        
+        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
+        self.present(nextViewController, animated:true, completion:nil)
+    }
+
 }

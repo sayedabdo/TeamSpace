@@ -16,6 +16,11 @@
 		160FD11B204DC3C8003DA7FD /* inserttextfield.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160FD11A204DC3C8003DA7FD /* inserttextfield.swift */; };
 		1615ADC820A7E50000CAE78F /* CommunitesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1615ADC720A7E50000CAE78F /* CommunitesVC.swift */; };
 		16170905205F15C000329AB3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16170904205F15C000329AB3 /* Constants.swift */; };
+		1620308B20E5131600B7C0E7 /* CreateGroupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1620308A20E5131600B7C0E7 /* CreateGroupVC.swift */; };
+		1662BCD320B386FD00E26F14 /* GroupmembersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1662BCD220B386FD00E26F14 /* GroupmembersVC.swift */; };
+		1662BCD520B3879A00E26F14 /* GroupmembersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1662BCD420B3879A00E26F14 /* GroupmembersCell.swift */; };
+		1662BCD720B3A31800E26F14 /* addmemberVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1662BCD620B3A31800E26F14 /* addmemberVC.swift */; };
+		1662BCD920B3A51900E26F14 /* addmemberCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1662BCD820B3A51900E26F14 /* addmemberCell.swift */; };
 		166477D62079EFFC0045D638 /* SignupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 166477D52079EFFC0045D638 /* SignupVC.swift */; };
 		16656F102086CD3800C18A27 /* profileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16656F0F2086CD3800C18A27 /* profileVC.swift */; };
 		16AD8B39208ACCDD00DB92B1 /* WorkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16AD8B38208ACCDD00DB92B1 /* WorkCell.swift */; };
@@ -50,6 +55,11 @@
 		160FD11A204DC3C8003DA7FD /* inserttextfield.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = inserttextfield.swift; sourceTree = "<group>"; };
 		1615ADC720A7E50000CAE78F /* CommunitesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommunitesVC.swift; sourceTree = "<group>"; };
 		16170904205F15C000329AB3 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		1620308A20E5131600B7C0E7 /* CreateGroupVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateGroupVC.swift; sourceTree = "<group>"; };
+		1662BCD220B386FD00E26F14 /* GroupmembersVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupmembersVC.swift; sourceTree = "<group>"; };
+		1662BCD420B3879A00E26F14 /* GroupmembersCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupmembersCell.swift; sourceTree = "<group>"; };
+		1662BCD620B3A31800E26F14 /* addmemberVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = addmemberVC.swift; sourceTree = "<group>"; };
+		1662BCD820B3A51900E26F14 /* addmemberCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = addmemberCell.swift; sourceTree = "<group>"; };
 		166477D52079EFFC0045D638 /* SignupVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupVC.swift; sourceTree = "<group>"; };
 		16656F0F2086CD3800C18A27 /* profileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = profileVC.swift; sourceTree = "<group>"; };
 		16AD8B38208ACCDD00DB92B1 /* WorkCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkCell.swift; sourceTree = "<group>"; };
@@ -98,6 +108,11 @@
 				1604483E20A8AF020091B0E9 /* communitesCell.swift */,
 				160709EF20B271E2002D8700 /* CommunityStructureCell.swift */,
 				160709F120B28A65002D8700 /* communitystructureVC.swift */,
+				1662BCD220B386FD00E26F14 /* GroupmembersVC.swift */,
+				1662BCD420B3879A00E26F14 /* GroupmembersCell.swift */,
+				1662BCD620B3A31800E26F14 /* addmemberVC.swift */,
+				1662BCD820B3A51900E26F14 /* addmemberCell.swift */,
+				1620308A20E5131600B7C0E7 /* CreateGroupVC.swift */,
 			);
 			name = "Community Module";
 			sourceTree = "<group>";
@@ -447,11 +462,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1662BCD520B3879A00E26F14 /* GroupmembersCell.swift in Sources */,
 				1604483F20A8AF020091B0E9 /* communitesCell.swift in Sources */,
 				160FD11B204DC3C8003DA7FD /* inserttextfield.swift in Sources */,
 				C22519DD202352EF003016BC /* CreateMeetingVC.swift in Sources */,
 				C25F2103202C603600028C82 /* HomeVC.swift in Sources */,
+				1662BCD920B3A51900E26F14 /* addmemberCell.swift in Sources */,
 				160FD119204DC0F2003DA7FD /* LoginVC.swift in Sources */,
+				1662BCD720B3A31800E26F14 /* addmemberVC.swift in Sources */,
+				1620308B20E5131600B7C0E7 /* CreateGroupVC.swift in Sources */,
 				C20147AF2020E4FB00561119 /* MessageVC.swift in Sources */,
 				16170905205F15C000329AB3 /* Constants.swift in Sources */,
 				C27ADD70201F9B5200E89C9B /* MeetingsVC.swift in Sources */,
@@ -463,6 +482,7 @@
 				C262E2982020D43100854FAA /* CircleImg.swift in Sources */,
 				C21FF32520330BD90041EC8E /* MyEventsVC.swift in Sources */,
 				16656F102086CD3800C18A27 /* profileVC.swift in Sources */,
+				1662BCD320B386FD00E26F14 /* GroupmembersVC.swift in Sources */,
 				C20136982024D48500AB0816 /* MeetingSettingsVC.swift in Sources */,
 				C27ADD6E201F9B5200E89C9B /* AppDelegate.swift in Sources */,
 				C20136962024BC2C00AB0816 /* CircleBtn.swift in Sources */,

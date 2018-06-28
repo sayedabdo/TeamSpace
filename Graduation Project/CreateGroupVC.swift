@@ -1,40 +1,46 @@
 //
-//  CreatecommunityVC.swift
+//  CreateGroupVC.swift
 //  Graduation Project
 //
-//  Created by Sayed Abdo on 4/27/18.
-//  Copyright © 2018 Yasmine Ghazy. All rights reserved.
+//  Created by Sayed Abdo on 6/28/18.
+//  Copyright © 2018 Sayed Abdo. All rights reserved.
 //
 
 import UIKit
 import Alamofire
 
-class CreatecommunityVC: UIViewController ,UIImagePickerControllerDelegate,UINavigationControllerDelegate{
+
+class CreateGroupVC: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate{
     
-    
+    var user_id = 0
+    var communityid = 0
     let picker = UIImagePickerController()
     @IBOutlet weak var imagePicked: UIImageView!
-    @IBOutlet weak var Communityname: UITextField!
-    @IBOutlet weak var Communitydescription: UITextField!
+    @IBOutlet weak var Groupname: UITextField!
+    @IBOutlet weak var Groupdescription: UITextField!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         
         
     }
-
-    @IBAction func Createcommunity(_ sender: Any) {
-        let communityurl = "http://team-space.000webhostapp.com/index.php/api/community/add"
+    
+    @IBAction func GreateGroup(_ sender: Any) {
+        let communityurl = "http://team-space.000webhostapp.com/index.php/api/groups/add"
         let params: [String : String] =
-            [   "Community_id"                : "\(1)",
-                "Community_name"              : "\(Communityname.text!)",
-                "Community_description"       : "\(Communitydescription.text!)",
-                "Community_picture"           : "",
-                "Users_User_id"               : "\(1)"
-            ]
+            [
+                "Group_id"                    : "\(1)",
+                "Group_name"                  : "\(Groupname.text!)",
+                "Group_description"           : "\(Groupdescription.text!)",
+                "Super_group_id"              : "\(0)",
+                "Group_picture"               : "",
+                "head_id"                     : "\(0)",
+                "Community_Community_id"      : "\(1)",
+                "Community_Users_User_id"     : "\(1)"
+        ]
         Alamofire.request(communityurl, method: .post, parameters: params, encoding: JSONEncoding.default)
             .responseJSON { response in
                 print(response.result)
@@ -99,11 +105,11 @@ class CreatecommunityVC: UIViewController ,UIImagePickerControllerDelegate,UINav
     
     
     @IBAction func createcommunity(_ sender: Any) {
-        if(Communityname.text?.isEmpty)!{
+        if(Groupname.text?.isEmpty)!{
             displayAlertMessage(title: "Error", messageToDisplay: "Community Name is empty 😡😡😡", titleofaction: "Try Again")
             return
         }
-        if(Communitydescription.text?.isEmpty)!{
+        if(Groupdescription.text?.isEmpty)!{
             displayAlertMessage(title: "Error", messageToDisplay: "Community Description is empty 😡😡😡", titleofaction: "Try Again")
             return
         }
@@ -122,5 +128,5 @@ class CreatecommunityVC: UIViewController ,UIImagePickerControllerDelegate,UINav
     
     @IBAction func backtocommuity(_ sender: Any) {
         dismiss(animated: true, completion: nil)
-   }
+    }
 }
