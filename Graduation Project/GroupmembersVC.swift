@@ -67,10 +67,9 @@ class GroupmembersVC: UIViewController, UITableViewDataSource,UITableViewDelegat
             }
             
         }
-                }}}
-        
-        
-        
+                }
+            }
+        }   
     }
     
     func numberOfSections(in tableview: UITableView) -> Int {
