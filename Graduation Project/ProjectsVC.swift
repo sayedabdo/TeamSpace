@@ -73,9 +73,9 @@ class ProjectsVC: UIViewController ,UITableViewDelegate,UITableViewDataSource {
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
-//        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-//        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "CreateProjectVC") as! CreateProjectVC
-//        self.present(nextViewController, animated:true, completion:nil)
+       let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+       let nextViewController = storyBoard.instantiateViewController(withIdentifier: "TasksVC") as! TasksVC
+       self.present(nextViewController, animated:true, completion:nil)
         
     }
     
@@ -85,7 +85,7 @@ class ProjectsVC: UIViewController ,UITableViewDelegate,UITableViewDataSource {
     
     @IBAction func addbtn(_ sender: Any) {
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "CreateGroupVC") as! CreateGroupVC
+        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "createmyprojectVC") as! createmyprojectVC
         self.present(nextViewController, animated:true, completion:nil)
     }
 
