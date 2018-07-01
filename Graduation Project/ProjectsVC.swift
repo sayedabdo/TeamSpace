@@ -72,6 +72,7 @@ class ProjectsVC: UIViewController ,UITableViewDelegate,UITableViewDataSource {
         cell.projectDescription.text =  arrayofnamesdescription[indexPath.row] as! String
         return cell
     }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "TasksVC") as! TasksVC
