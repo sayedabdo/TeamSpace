@@ -9,24 +9,46 @@
 import UIKit
 import Alamofire
 
-class createtaskVC: UIViewController ,UIImagePickerControllerDelegate,UINavigationControllerDelegate{
+class createtaskVC: UIViewController ,UIImagePickerControllerDelegate,UINavigationControllerDelegate, UITableViewDataSource,UITableViewDelegate{
     
     
     let picker = UIImagePickerController()
     @IBOutlet weak var imagePicked: UIImageView!
     @IBOutlet weak var tasktname: UITextField!
     @IBOutlet weak var taskdescription: UITextField!
-    
     @IBOutlet weak var deadline: UIDatePicker!
-  
+    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var todobtn: UIButton!
     @IBOutlet weak var inprogressbtn: UIButton!
     @IBOutlet weak var donebtn: UIButton!
     
+    var Group_id : String = "1"
+    
+    var Task_status : String = "TO DO"
+    var communityid : Int = 1
+    var arrayofid : [Double] = []{
+        didSet{
+            tableView.reloadData()
+        }
+    }
+    var arrayofnames : [String] = []{
+        didSet{
+            tableView.reloadData()
+        }
+    }
+    var arrayofnamesdescription : [String] = []{
+        didSet{
+            tableView.reloadData()
+        }
+    }
     override func viewDidLoad() {
+        
+        tableView.delegate = self
+        tableView.dataSource = self
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+       getgroups()
     }
     
     
@@ -36,11 +58,11 @@ class createtaskVC: UIViewController ,UIImagePickerControllerDelegate,UINavigati
             let params: [String : String] =
                 [    "Task_id"                                    : "\(1)",
                      "Task_name"                                  : "\(tasktname.text!)",
-                     "Project_description"                        : "\(tasktname.text!)",
+                     "Task_description"                           : "\(taskdescription.text!)",
                      "Task_deadlinne"                             : "\(deadline.date)",
-                     "Task_status"                                : "TO DO",
+                     "Task_status"                                : "\(Task_status)",
                      "Projects_Project_id"                        : "\(1)",
-                     "Projects_Groups_Group_id"                   : "\(1)",
+                     "Projects_Groups_Group_id"                   : "\(Group_id)",
                      "Projects_Groups_Community_Community_id"     : "\(1)",
                      "Projects_Groups_Community_Users_User_id"    : "\(1)"
             ]
@@ -122,24 +144,70 @@ class createtaskVC: UIViewController ,UIImagePickerControllerDelegate,UINavigati
     
     
     @IBAction func todofunc(_ sender: Any) {
-<<<<<<< HEAD
+        Task_status = "TO DO"
         todobtn.isEnabled = false
         inprogressbtn.isEnabled = true
         donebtn.isEnabled = true
-=======
->>>>>>> ce034ecdd1581b2c2a36401fe693aa061b590fde
     }
     
     @IBAction func inprogressfunc(_ sender: Any) {
+        Task_status = "IN_Progress"
         todobtn.isEnabled = true
         inprogressbtn.isEnabled = false
         donebtn.isEnabled = true
     }
     
     @IBAction func donefunc(_ sender: Any) {
+        Task_status = "DONE"
         todobtn.isEnabled = true
         inprogressbtn.isEnabled = true
         donebtn.isEnabled = false
+    }
+    func getgroups(){
+        let group_get_url = "http://team-space.000webhostapp.com/index.php/api/groups"
+        Alamofire.request(group_get_url).responseJSON { response in
+            let result = response.result
+            print("the result is : \(result.value)")
+            if let arrayOfDic = result.value as? [Dictionary<String, AnyObject>] {
+                for aDic in arrayOfDic{
+                    let community_id = Int((aDic["Community_Community_id"]as! NSString).doubleValue)
+                    if(community_id == self.communityid){
+                        self.arrayofnames.append(aDic["Group_name"] as! String)
+                        self.arrayofnamesdescription.append(aDic["Group_description"] as! String)
+                        self.arrayofid.append((aDic["Group_id"] as! NSString).doubleValue)
+                        self.tableView.reloadData()
+                    }
+                }
+            }
+            
+        }
+    }
+    
+    
+    
+    func numberOfSections(in tableview: UITableView) -> Int {
+        return 1
+    }
+    func tableView(_ tableview: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print("the count is : ",arrayofnames.count)
+        return arrayofnames.count
+    }
+    
+    
+    func tableView(_ tableview: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableview.dequeueReusableCell(withIdentifier: "groupintaskCell") as? groupintaskCell else { return UITableViewCell()
+        }
+        cell.Structurename.text = arrayofnames[indexPath.row] as! String
+        cell.Structuredescription.text =  arrayofnamesdescription[indexPath.row] as! String
+        return cell
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
+      //  let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+     //   let nextViewController = storyBoard.instantiateViewController(withIdentifier: "GroupmembersVC") as! GroupmembersVC
+     //   nextViewController.group_id =  Int(arrayofid[indexPath.row])
+        Group_id = String(Int(arrayofid[indexPath.row]))
+    //    self.present(nextViewController, animated:true, completion:nil)
+        
     }
     
     
