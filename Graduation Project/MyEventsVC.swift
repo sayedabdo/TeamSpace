@@ -72,7 +72,7 @@ class MyEventsVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableview: UITableView, numberOfRowsInSection section: Int) -> Int {
-       // print("the count is : ",arrayofnames.count)
+       print("the count is : ",arrayofnames.count)
         return arrayofnames.count
     }
     
