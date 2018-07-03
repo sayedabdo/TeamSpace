@@ -122,7 +122,6 @@ class createtaskVC: UIViewController ,UIImagePickerControllerDelegate,UINavigati
     
     
     @IBAction func todofunc(_ sender: Any) {
-        inpr
     }
     
     @IBAction func inprogressfunc(_ sender: Any) {

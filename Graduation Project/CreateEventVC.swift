@@ -56,5 +56,13 @@ class CreateEventVC: UIViewController {
         }
 
     }
+    
+    
+    @IBAction func addMembers(_ sender: Any) {
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "members") as! MembersVC
+        self.present(nextViewController, animated:true, completion:nil)
+    }
+    
 
 }
