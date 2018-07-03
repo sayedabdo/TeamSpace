@@ -122,13 +122,21 @@ class createtaskVC: UIViewController ,UIImagePickerControllerDelegate,UINavigati
     
     
     @IBAction func todofunc(_ sender: Any) {
-        inpr
+        todobtn.isEnabled = false
+        inprogressbtn.isEnabled = true
+        donebtn.isEnabled = true
     }
     
     @IBAction func inprogressfunc(_ sender: Any) {
+        todobtn.isEnabled = true
+        inprogressbtn.isEnabled = false
+        donebtn.isEnabled = true
     }
     
     @IBAction func donefunc(_ sender: Any) {
+        todobtn.isEnabled = true
+        inprogressbtn.isEnabled = true
+        donebtn.isEnabled = false
     }
     
     

@@ -4627,7 +4627,7 @@ UGFzc3dvcmQDA
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="NGt-6E-UET" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="RZc-9o-LuK">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="RZc-9o-LuK">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.23489023349999999" green="0.47506352660000001" blue="0.59428537439999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
