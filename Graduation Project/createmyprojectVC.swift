@@ -18,8 +18,9 @@ class createmyprojectVC: UIViewController ,UIImagePickerControllerDelegate,UINav
     @IBOutlet weak var projectdescription: UITextField!
     @IBOutlet weak var tableview: UITableView!
     var current_user : Double  = 1
-    var communityid = 1
+    var current_communityid = 1
     var selectedgroup = 0
+    var current_group_id : String = "0"
     var arrayofid : [Double] = []{
         didSet{
             tableview.reloadData()
@@ -36,8 +37,8 @@ class createmyprojectVC: UIViewController ,UIImagePickerControllerDelegate,UINav
         }
     }
     override func viewDidLoad() {
-        tableView.delegate = self
-        tableView.dataSource = self
+        tableview.delegate = self
+        tableview.dataSource = self
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         getproject()
@@ -61,7 +62,7 @@ class createmyprojectVC: UIViewController ,UIImagePickerControllerDelegate,UINav
                 [   "Project_id"                       : "\(4)",
                     "Project_name"                     : "\(projectname.text!)",
                     "Project_description"              : "\(projectdescription.text!)",
-                    "Groups_Group_id"                  : "\(1)",
+                    "Groups_Group_id"                  : "\(current_group_id)",
                     "Groups_Community_Community_id"    : "\(1)",
                     "Groups_Community_Users_User_id"   : "\(1)"
                 ]
@@ -148,7 +149,7 @@ class createmyprojectVC: UIViewController ,UIImagePickerControllerDelegate,UINav
             if let arrayOfDic = result.value as? [Dictionary<String, AnyObject>] {
                 for aDic in arrayOfDic{
                     let community_id = Int((aDic["Community_Community_id"]as! NSString).doubleValue)
-                    if(community_id == self.communityid){
+                    if(community_id == self.current_communityid){
                         self.arrayofnames.append(aDic["Group_name"] as! String)
                         self.arrayofnamesdescription.append(aDic["Group_description"] as! String)
                         self.arrayofid.append((aDic["Group_id"] as! NSString).doubleValue)
@@ -167,12 +168,12 @@ class createmyprojectVC: UIViewController ,UIImagePickerControllerDelegate,UINav
     func tableView(_ tableview: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableview.dequeueReusableCell(withIdentifier: "groupsintaskCell") as? groupsintaskCell else { return UITableViewCell()
         }
-        cell.projectname.text = arrayofnames[indexPath.row] as! String
-        cell.projectdescription.text =  arrayofnamesdescription[indexPath.row] as! String
+        cell.groupname.text = arrayofnames[indexPath.row] as! String
+        cell.groupDescription.text =  arrayofnamesdescription[indexPath.row] as! String
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
-       group_id =  Int(arrayofid[indexPath.row])
+       current_group_id =  String(Int(arrayofid[indexPath.row]))
        selectedgroup = 1
         
     }

@@ -17,4 +17,6 @@ class TasksCell: UICollectionViewCell {
     @IBOutlet weak var taskimage: UIImageView!
     
     @IBOutlet weak var taskingroup: UILabel!
+    
+    @IBOutlet weak var deadline: UILabel!
 }

@@ -1,15 +1,14 @@
 //
-//  TasksVC.swift
+//  MeetingVC.swift
 //  Graduation Project
 //
-//  Created by Sayed Abdo on 6/29/18.
+//  Created by Sayed Abdo on 7/4/18.
 //  Copyright © 2018 Sayed Abdo. All rights reserved.
 //
 
 import UIKit
-import Alamofire
 
-class TasksVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout
+class MeetingVC: UIViewController , UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout
 {
     
     @IBOutlet weak var display_task_status: UISegmentedControl!
@@ -54,14 +53,14 @@ class TasksVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataS
         return 1
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-//        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "TasksVC") as! TasksVC
-//        self.present(nextViewController, animated:true, completion:nil)
+        //        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        //        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "TasksVC") as! TasksVC
+        //        self.present(nextViewController, animated:true, completion:nil)
         
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collection.dequeueReusableCell(withReuseIdentifier: "TasksCell", for: indexPath) as? TasksCell
-        else { return UICollectionViewCell()
+            else { return UICollectionViewCell()
         }
         cell.taskname.text = arrayofnames[indexPath.row] as! String
         cell.taskDescription.text =  arrayofnamesdescription[indexPath.row] as! String
@@ -113,4 +112,4 @@ class TasksVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataS
     }
     
 }
-    
+

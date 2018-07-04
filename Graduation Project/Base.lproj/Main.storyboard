@@ -3817,22 +3817,29 @@ UGFzc3dvcmQDA
                                     <action selector="changecommunities:" destination="Iwq-De-O4M" eventType="valueChanged" id="9g1-s8-ESt"/>
                                 </connections>
                             </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Tl-YY-TvJ">
+                                <rect key="frame" x="0.0" y="619" width="375" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="Sjr-gB-ee0"/>
+                                </constraints>
+                                <state key="normal" title="Create Task"/>
+                            </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="If7-ki-rO5">
-                                <rect key="frame" x="5" y="105" width="365" height="510"/>
+                                <rect key="frame" x="5" y="106" width="365" height="510"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.50196081400000003" green="0.0" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="vJW-aU-yGU">
-                                    <size key="itemSize" width="170" height="211"/>
+                                    <size key="itemSize" width="170" height="263"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TasksCell" id="cHe-kK-7kw" customClass="TasksCell" customModule="Graduation_Project" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="170" height="211"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="170" height="263"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="170" height="211"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="170" height="263"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="teamspacelogo" translatesAutoresizingMaskIntoConstraints="NO" id="Y37-S3-ZsM">
@@ -3860,11 +3867,19 @@ UGFzc3dvcmQDA
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="Kwf-Es-wyt">
+                                                    <rect key="frame" x="0.0" y="208" width="170" height="35"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                         </view>
                                         <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
-                                        <size key="customSize" width="170" height="211"/>
+                                        <size key="customSize" width="170" height="263"/>
                                         <connections>
+                                            <outlet property="deadline" destination="Kwf-Es-wyt" id="0gS-IJ-hAf"/>
                                             <outlet property="taskDescription" destination="PPm-Ok-zzp" id="HlU-AF-DAU"/>
                                             <outlet property="taskimage" destination="Y37-S3-ZsM" id="LOt-qu-fy7"/>
                                             <outlet property="taskingroup" destination="buI-YK-o8S" id="UOX-S6-R8Z"/>
@@ -3873,13 +3888,6 @@ UGFzc3dvcmQDA
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Tl-YY-TvJ">
-                                <rect key="frame" x="0.0" y="619" width="375" height="48"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="48" id="Sjr-gB-ee0"/>
-                                </constraints>
-                                <state key="normal" title="Create Task"/>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -3898,7 +3906,7 @@ UGFzc3dvcmQDA
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oby-0e-Hcf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4394" y="2470"/>
+            <point key="canvasLocation" x="-4394.3999999999996" y="2469.7151424287858"/>
         </scene>
         <!--CreatetaskVC-->
         <scene sceneID="5No-Si-bWb">

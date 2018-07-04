@@ -22,6 +22,7 @@
 		161C402F20E6023D0060626F /* ProjectsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161C402E20E6023D0060626F /* ProjectsCell.swift */; };
 		1620308B20E5131600B7C0E7 /* CreateGroupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1620308A20E5131600B7C0E7 /* CreateGroupVC.swift */; };
 		1623FCA820ECD0BB003F4947 /* groupsintaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1623FCA720ECD0BB003F4947 /* groupsintaskCell.swift */; };
+		1623FCAA20ECDFE2003F4947 /* MeetingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1623FCA920ECDFE2003F4947 /* MeetingVC.swift */; };
 		164BD61520E766D1001BBA19 /* createmyprojectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164BD61420E766D1001BBA19 /* createmyprojectVC.swift */; };
 		164BD61720E77042001BBA19 /* TasksCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164BD61620E77042001BBA19 /* TasksCell.swift */; };
 		1662BCD320B386FD00E26F14 /* GroupmembersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1662BCD220B386FD00E26F14 /* GroupmembersVC.swift */; };
@@ -80,6 +81,7 @@
 		161C402E20E6023D0060626F /* ProjectsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectsCell.swift; sourceTree = "<group>"; };
 		1620308A20E5131600B7C0E7 /* CreateGroupVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateGroupVC.swift; sourceTree = "<group>"; };
 		1623FCA720ECD0BB003F4947 /* groupsintaskCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = groupsintaskCell.swift; sourceTree = "<group>"; };
+		1623FCA920ECDFE2003F4947 /* MeetingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetingVC.swift; sourceTree = "<group>"; };
 		164BD61420E766D1001BBA19 /* createmyprojectVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = createmyprojectVC.swift; sourceTree = "<group>"; };
 		164BD61620E77042001BBA19 /* TasksCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TasksCell.swift; sourceTree = "<group>"; };
 		1662BCD220B386FD00E26F14 /* GroupmembersVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupmembersVC.swift; sourceTree = "<group>"; };
@@ -350,6 +352,7 @@
 				C27ADD82201F9C1800E89C9B /* Model */,
 				C27ADD81201F9C1000E89C9B /* View */,
 				C27ADD80201F9BFE00E89C9B /* Controller */,
+				1623FCA920ECDFE2003F4947 /* MeetingVC.swift */,
 			);
 			name = "Meeting Module";
 			sourceTree = "<group>";
@@ -561,6 +564,7 @@
 				C21B71BF20E807B30073505E /* EventVC.swift in Sources */,
 				C262E2982020D43100854FAA /* CircleImg.swift in Sources */,
 				C21FF32520330BD90041EC8E /* MyEventsVC.swift in Sources */,
+				1623FCAA20ECDFE2003F4947 /* MeetingVC.swift in Sources */,
 				16656F102086CD3800C18A27 /* profileVC.swift in Sources */,
 				1662BCD320B386FD00E26F14 /* GroupmembersVC.swift in Sources */,
 				C2BF4CAB20EA7D25006E488F /* MembersVC.swift in Sources */,
