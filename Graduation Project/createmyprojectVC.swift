@@ -9,21 +9,53 @@
 import UIKit
 import Alamofire
 
-class createmyprojectVC: UIViewController ,UIImagePickerControllerDelegate,UINavigationControllerDelegate{
+class createmyprojectVC: UIViewController ,UIImagePickerControllerDelegate,UINavigationControllerDelegate,UITableViewDelegate,UITableViewDataSource{
     
     
     let picker = UIImagePickerController()
     @IBOutlet weak var imagePicked: UIImageView!
     @IBOutlet weak var projectname: UITextField!
     @IBOutlet weak var projectdescription: UITextField!
+    @IBOutlet weak var tableview: UITableView!
+    var current_user : Double  = 1
+    var communityid = 1
+    var selectedgroup = 0
+    var arrayofid : [Double] = []{
+        didSet{
+            tableview.reloadData()
+        }
+    }
+    var arrayofnames : [String] = []{
+        didSet{
+            tableview.reloadData()
+        }
+    }
+    var arrayofnamesdescription : [String] = []{
+        didSet{
+            tableview.reloadData()
+        }
+    }
     override func viewDidLoad() {
+        tableView.delegate = self
+        tableView.dataSource = self
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+        getproject()
     }
 
     @IBAction func addmyproject(_ sender: Any) {
-        
+        if(projectname.text?.isEmpty)!{
+            displayAlertMessage(title: "Error", messageToDisplay: "Project Name Is Empty 😡😡😡", titleofaction: "Try Again")
+            return
+        }
+        if(projectdescription.text?.isEmpty)!{
+            displayAlertMessage(title: "Error", messageToDisplay: "Project Description Is Empty 😡😡😡", titleofaction: "Try Again")
+            return
+        }
+        if(selectedgroup == 0){
+            displayAlertMessage(title: "Error", messageToDisplay: "Please, Select Group 😡😡😡", titleofaction: "Try Again")
+            return
+        }
         let projecturl = "http://team-space.000webhostapp.com/index.php/api/projects/add"
         let params: [String : String] =
                 [   "Project_id"                       : "\(4)",
@@ -108,4 +140,40 @@ class createmyprojectVC: UIViewController ,UIImagePickerControllerDelegate,UINav
         dismiss(animated: true, completion: nil)
     }
     
+    func getproject(){
+        let group_get_url = "http://team-space.000webhostapp.com/index.php/api/groups"
+        Alamofire.request(group_get_url).responseJSON { response in
+            let result = response.result
+            print("the result is : \(result.value)")
+            if let arrayOfDic = result.value as? [Dictionary<String, AnyObject>] {
+                for aDic in arrayOfDic{
+                    let community_id = Int((aDic["Community_Community_id"]as! NSString).doubleValue)
+                    if(community_id == self.communityid){
+                        self.arrayofnames.append(aDic["Group_name"] as! String)
+                        self.arrayofnamesdescription.append(aDic["Group_description"] as! String)
+                        self.arrayofid.append((aDic["Group_id"] as! NSString).doubleValue)
+                    }
+               }
+            }
+        }
+    }
+    func numberOfSections(in tableview: UITableView) -> Int {
+        return 1
+    }
+    func tableView(_ tableview: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print("the count is : ",arrayofnames.count)
+        return arrayofnames.count
+    }
+    func tableView(_ tableview: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableview.dequeueReusableCell(withIdentifier: "groupsintaskCell") as? groupsintaskCell else { return UITableViewCell()
+        }
+        cell.projectname.text = arrayofnames[indexPath.row] as! String
+        cell.projectdescription.text =  arrayofnamesdescription[indexPath.row] as! String
+        return cell
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
+       group_id =  Int(arrayofid[indexPath.row])
+       selectedgroup = 1
+        
+    }
 }

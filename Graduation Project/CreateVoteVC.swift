@@ -43,6 +43,8 @@ class CreateVoteVC: UIViewController,UITableViewDelegate, UITableViewDataSource 
             return cell
     }
     
+
+    
     @IBAction func createAction(_ sender: Any) {
         if(voteQuestionTF.text?.isEmpty)! {
             /* displayAlertMessage(title: "Error", messageToDisplay: "Please complete your data", titleofaction: "Try Again")*/

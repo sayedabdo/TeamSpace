@@ -34,6 +34,11 @@ class TasksVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataS
             collection.reloadData()
         }
     }
+    var arrayofdeadline : [String] = []{
+        didSet{
+            collection.reloadData()
+        }
+    }
     override func viewDidLoad() {
         
         collection.dataSource = self
@@ -100,7 +105,7 @@ class TasksVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataS
                             self.arrayofnames.append(aDic["Task_name"] as! String)
                             self.arrayofnamesdescription.append(aDic["Task_description"] as! String)
                             self.arrayofid.append((aDic["Task_id"] as! NSString).doubleValue)
-                            
+                            self.arrayofdeadline.append(aDic["Task_deadlinne"] as! String)
                         }
                     }
                 }
