@@ -22,7 +22,22 @@ class createtaskVC: UIViewController ,UIImagePickerControllerDelegate,UINavigati
     @IBOutlet weak var todobtn: UIButton!
     @IBOutlet weak var inprogressbtn: UIButton!
     @IBOutlet weak var donebtn: UIButton!
-    
+    var task_status = "TO DO"
+    var arrayofid : [Double] = []{
+        didSet{
+            collection.reloadData()
+        }
+    }
+    var arrayofnames : [String] = []{
+        didSet{
+            collection.reloadData()
+        }
+    }
+    var arrayofnamesdescription : [String] = []{
+        didSet{
+            collection.reloadData()
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -38,7 +53,7 @@ class createtaskVC: UIViewController ,UIImagePickerControllerDelegate,UINavigati
                      "Task_name"                                  : "\(tasktname.text!)",
                      "Project_description"                        : "\(tasktname.text!)",
                      "Task_deadlinne"                             : "\(deadline.date)",
-                     "Task_status"                                : "TO DO",
+                     "Task_status"                                : "\(task_status)",
                      "Projects_Project_id"                        : "\(1)",
                      "Projects_Groups_Group_id"                   : "\(1)",
                      "Projects_Groups_Community_Community_id"     : "\(1)",
@@ -92,8 +107,6 @@ class createtaskVC: UIViewController ,UIImagePickerControllerDelegate,UINavigati
             myPickerController.delegate = self;
             myPickerController.sourceType = .photoLibrary
             present(myPickerController, animated: true, completion: nil)
-            
-            
         }
     }
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
@@ -122,12 +135,50 @@ class createtaskVC: UIViewController ,UIImagePickerControllerDelegate,UINavigati
     
     
     @IBAction func todofunc(_ sender: Any) {
+        todobtn.isEnabled = false
+        inprogressbtn.isEnabled = true
+        donebtn.isEnabled = true
+        task_status = "TO DO"
     }
     
     @IBAction func inprogressfunc(_ sender: Any) {
+        todobtn.isEnabled = true
+        inprogressbtn.isEnabled = false
+        donebtn.isEnabled = true
+        task_status = "IN-Progress"
+        
     }
     
     @IBAction func donefunc(_ sender: Any) {
+        todobtn.isEnabled = true
+        inprogressbtn.isEnabled = true
+        donebtn.isEnabled = false
+        task_status = "DONE"
+    }
+    func numberOfSections(in tableview: UITableView) -> Int {
+        return 1
+    }
+    func tableView(_ tableview: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print("the count is : ",self.arrayofnames.count)
+        return self.arrayofnames.count
+    }
+    
+    
+    func tableView(_ tableview: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableview.dequeueReusableCell(withIdentifier: "GroupmembersCell") as? GroupmembersCell else { return UITableViewCell()
+        }
+        cell.groupmembername.text = self.arrayofnames[indexPath.row]
+        cell.groupmemberdescription.text =  self.arrayofemails[indexPath.row]
+        return cell
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "profile") as! profileVC
+        nextViewController.email =  arrayofemails[indexPath.row] as! String
+        self.present(nextViewController, animated:true, completion:nil)
+    }
+    func getmember(){
+        
     }
     
     
