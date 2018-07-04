@@ -88,6 +88,11 @@ class TasksVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataS
             taskfilter(status: "DONE")
         }
     }
+    @IBAction func addbtn(_ sender: Any) {
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "createtaskVC") as! createtaskVC
+        self.present(nextViewController, animated:true, completion:nil)
+    }
     
     func taskfilter(status: String){
         self.current_task_status = status
