@@ -20,10 +20,10 @@
 		16170905205F15C000329AB3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16170904205F15C000329AB3 /* Constants.swift */; };
 		161C402D20E601830060626F /* ProjectsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161C402C20E601830060626F /* ProjectsVC.swift */; };
 		161C402F20E6023D0060626F /* ProjectsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161C402E20E6023D0060626F /* ProjectsCell.swift */; };
+		161C403120E6094C0060626F /* CreateProjectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161C403020E6094C0060626F /* CreateProjectVC.swift */; };
 		1620308B20E5131600B7C0E7 /* CreateGroupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1620308A20E5131600B7C0E7 /* CreateGroupVC.swift */; };
 		164BD61520E766D1001BBA19 /* createmyprojectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164BD61420E766D1001BBA19 /* createmyprojectVC.swift */; };
 		164BD61720E77042001BBA19 /* TasksCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164BD61620E77042001BBA19 /* TasksCell.swift */; };
-		165FB2DC20EB8241006089D0 /* groupintaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165FB2DB20EB8241006089D0 /* groupintaskCell.swift */; };
 		1662BCD320B386FD00E26F14 /* GroupmembersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1662BCD220B386FD00E26F14 /* GroupmembersVC.swift */; };
 		1662BCD520B3879A00E26F14 /* GroupmembersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1662BCD420B3879A00E26F14 /* GroupmembersCell.swift */; };
 		1662BCD720B3A31800E26F14 /* addmemberVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1662BCD620B3A31800E26F14 /* addmemberVC.swift */; };
@@ -47,6 +47,7 @@
 		C22B60F320E7F27200528A92 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22B60F220E7F27200528A92 /* EventCell.swift */; };
 		C25F2103202C603600028C82 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25F2102202C603600028C82 /* HomeVC.swift */; };
 		C25F2108202C612600028C82 /* AllEventsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25F2107202C612600028C82 /* AllEventsVC.swift */; };
+		C26248F920EC26A700B2E6E7 /* CustomiseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26248F820EC26A700B2E6E7 /* CustomiseTableViewCell.swift */; };
 		C262E2982020D43100854FAA /* CircleImg.swift in Sources */ = {isa = PBXBuildFile; fileRef = C262E2972020D43100854FAA /* CircleImg.swift */; };
 		C27ADD6E201F9B5200E89C9B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27ADD6D201F9B5200E89C9B /* AppDelegate.swift */; };
 		C27ADD70201F9B5200E89C9B /* MeetingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27ADD6F201F9B5200E89C9B /* MeetingsVC.swift */; };
@@ -77,10 +78,10 @@
 		16170904205F15C000329AB3 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		161C402C20E601830060626F /* ProjectsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectsVC.swift; sourceTree = "<group>"; };
 		161C402E20E6023D0060626F /* ProjectsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectsCell.swift; sourceTree = "<group>"; };
+		161C403020E6094C0060626F /* CreateProjectVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateProjectVC.swift; sourceTree = "<group>"; };
 		1620308A20E5131600B7C0E7 /* CreateGroupVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateGroupVC.swift; sourceTree = "<group>"; };
 		164BD61420E766D1001BBA19 /* createmyprojectVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = createmyprojectVC.swift; sourceTree = "<group>"; };
 		164BD61620E77042001BBA19 /* TasksCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TasksCell.swift; sourceTree = "<group>"; };
-		165FB2DB20EB8241006089D0 /* groupintaskCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = groupintaskCell.swift; sourceTree = "<group>"; };
 		1662BCD220B386FD00E26F14 /* GroupmembersVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupmembersVC.swift; sourceTree = "<group>"; };
 		1662BCD420B3879A00E26F14 /* GroupmembersCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupmembersCell.swift; sourceTree = "<group>"; };
 		1662BCD620B3A31800E26F14 /* addmemberVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = addmemberVC.swift; sourceTree = "<group>"; };
@@ -108,6 +109,7 @@
 		C237DEDD202397400064083F /* fa-solid-900.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "fa-solid-900.ttf"; sourceTree = "<group>"; };
 		C25F2102202C603600028C82 /* HomeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		C25F2107202C612600028C82 /* AllEventsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllEventsVC.swift; sourceTree = "<group>"; };
+		C26248F820EC26A700B2E6E7 /* CustomiseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomiseTableViewCell.swift; sourceTree = "<group>"; };
 		C262E2972020D43100854FAA /* CircleImg.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleImg.swift; sourceTree = "<group>"; };
 		C27ADD6A201F9B5200E89C9B /* Graduation Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Graduation Project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C27ADD6D201F9B5200E89C9B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -170,10 +172,10 @@
 				161C402C20E601830060626F /* ProjectsVC.swift */,
 				161C402E20E6023D0060626F /* ProjectsCell.swift */,
 				1616425820E64D310068B2FE /* TasksVC.swift */,
+				161C403020E6094C0060626F /* CreateProjectVC.swift */,
 				164BD61420E766D1001BBA19 /* createmyprojectVC.swift */,
 				164BD61620E77042001BBA19 /* TasksCell.swift */,
 				160E02F220E9B79000287855 /* createtaskVC.swift */,
-				165FB2DB20EB8241006089D0 /* groupintaskCell.swift */,
 			);
 			name = "Project Module";
 			sourceTree = "<group>";
@@ -215,6 +217,7 @@
 				C2BF4CB220EA9A79006E488F /* VoteVC.swift */,
 				C2FDF8B220EAAE92003B3AFC /* Vote.swift */,
 				C2FDF8B420EAE25D003B3AFC /* optionCell.swift */,
+				C26248F820EC26A700B2E6E7 /* CustomiseTableViewCell.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -533,12 +536,14 @@
 				C2FDF8B320EAAE92003B3AFC /* Vote.swift in Sources */,
 				C25F2103202C603600028C82 /* HomeVC.swift in Sources */,
 				C2BF4CAD20EA7E43006E488F /* MembersCell.swift in Sources */,
+				161C403120E6094C0060626F /* CreateProjectVC.swift in Sources */,
 				1662BCD920B3A51900E26F14 /* addmemberCell.swift in Sources */,
 				164BD61520E766D1001BBA19 /* createmyprojectVC.swift in Sources */,
 				C22B60F320E7F27200528A92 /* EventCell.swift in Sources */,
 				C2BF4CAF20EA980A006E488F /* VoteCell.swift in Sources */,
 				164BD61720E77042001BBA19 /* TasksCell.swift in Sources */,
 				160FD119204DC0F2003DA7FD /* LoginVC.swift in Sources */,
+				C26248F920EC26A700B2E6E7 /* CustomiseTableViewCell.swift in Sources */,
 				1662BCD720B3A31800E26F14 /* addmemberVC.swift in Sources */,
 				1620308B20E5131600B7C0E7 /* CreateGroupVC.swift in Sources */,
 				C20147AF2020E4FB00561119 /* MessageVC.swift in Sources */,
@@ -565,7 +570,6 @@
 				C27ADD6E201F9B5200E89C9B /* AppDelegate.swift in Sources */,
 				C20136962024BC2C00AB0816 /* CircleBtn.swift in Sources */,
 				1615ADC820A7E50000CAE78F /* CommunitesVC.swift in Sources */,
-				165FB2DC20EB8241006089D0 /* groupintaskCell.swift in Sources */,
 				1608A0A420936A070099D7BC /* CreatecommunityVC.swift in Sources */,
 				C2138DF7208A0F76006EBB66 /* AllVoteVC.swift in Sources */,
 				160709F220B28A65002D8700 /* communitystructureVC.swift in Sources */,
