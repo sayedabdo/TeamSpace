@@ -1,58 +1,58 @@
 //
-//  createtaskVC.swift
+//  CreateProjectVC.swift
 //  Graduation Project
 //
-//  Created by Sayed Abdo on 7/1/18.
+//  Created by Sayed Abdo on 6/28/18.
 //  Copyright © 2018 Sayed Abdo. All rights reserved.
 //
 
 import UIKit
 import Alamofire
 
-class createtaskVC: UIViewController ,UIImagePickerControllerDelegate,UINavigationControllerDelegate{
+class CreateProjectVC: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate{
     
     
     let picker = UIImagePickerController()
     @IBOutlet weak var imagePicked: UIImageView!
-    @IBOutlet weak var tasktname: UITextField!
-    @IBOutlet weak var taskdescription: UITextField!
-    
-    @IBOutlet weak var deadline: UIDatePicker!
-  
-    @IBOutlet weak var todobtn: UIButton!
-    @IBOutlet weak var inprogressbtn: UIButton!
-    @IBOutlet weak var donebtn: UIButton!
+    @IBOutlet weak var projectname: UITextField!
+    @IBOutlet weak var projectdescription: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         // Do any additional setup after loading the view.
     }
     
     
     
-       @IBAction func Createtask(_ sender: Any) {
-            let projecturl = "http://team-space.000webhostapp.com/index.php/api/tasks/add"
-            let params: [String : String] =
-                [    "Task_id"                                    : "\(1)",
-                     "Task_name"                                  : "\(tasktname.text!)",
-                     "Project_description"                        : "\(tasktname.text!)",
-                     "Task_deadlinne"                             : "\(deadline.date)",
-                     "Task_status"                                : "TO DO",
-                     "Projects_Project_id"                        : "\(1)",
-                     "Projects_Groups_Group_id"                   : "\(1)",
-                     "Projects_Groups_Community_Community_id"     : "\(1)",
-                     "Projects_Groups_Community_Users_User_id"    : "\(1)"
-            ]
-            Alamofire.request(projecturl, method: .post, parameters: params, encoding: JSONEncoding.default)
-                .responseJSON { response in
-                    print(response.result)
-                    let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+    @IBAction func addproject(_ sender: Any) {
+        
+    }
     
-                    let nextViewController = storyBoard.instantiateViewController(withIdentifier: "ProjectsVC") as! ProjectsVC
-                    self.present(nextViewController, animated:true, completion:nil)
-            }
-      }
+    
+    
+    
+ //   @IBAction func Createproject(_ sender: Any) {
+//        let projecturl = "http://team-space.000webhostapp.com/index.php/api/projects/add"
+//        let params: [String : String] =
+//            [   "Project_id"                       : "\(4)",
+//                "Project_name"                     : "\(projectname.text!)",
+//                "Project_description"              : "\(projectdescription.text!)",
+//                "Groups_Group_id"                  : "\(1)",
+//                "Groups_Community_Community_id"    : "\(1)",
+//                "Groups_Community_Users_User_id"   : "\(1)"
+//        ]
+//        Alamofire.request(projecturl, method: .post, parameters: params, encoding: JSONEncoding.default)
+//            .responseJSON { response in
+//                print(response.result)
+//                print("HHHHHHHHHHHHH")
+//                let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+//                
+//                let nextViewController = storyBoard.instantiateViewController(withIdentifier: "ProjectsVC") as! ProjectsVC
+//                self.present(nextViewController, animated:true, completion:nil)
+//        }
+  //      print("sdfsdfs")
+  //  }
     
     @IBAction func changeimage(_ sender: Any) {
         let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
@@ -120,16 +120,4 @@ class createtaskVC: UIViewController ,UIImagePickerControllerDelegate,UINavigati
         dismiss(animated: true, completion: nil)
     }
     
-    
-    @IBAction func todofunc(_ sender: Any) {
-    }
-    
-    @IBAction func inprogressfunc(_ sender: Any) {
-    }
-    
-    @IBAction func donefunc(_ sender: Any) {
-    }
-    
-    
-
 }

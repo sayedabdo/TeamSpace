@@ -76,7 +76,6 @@ class ProjectsVC: UIViewController ,UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "TasksVC") as! TasksVC
-       nextViewController.current_ptoject_id = arrayofid[indexPath.row]
        self.present(nextViewController, animated:true, completion:nil)
         
     }

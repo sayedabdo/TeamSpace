@@ -18,7 +18,6 @@ class TasksVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataS
     var current_user : Double  = 1
     var current_community = 0
     var task_status_index = 0
-    var current_ptoject_id :Double = 0
     var current_task_status = "TO DO"
     var arrayofid : [Double] = []{
         didSet{
@@ -79,10 +78,10 @@ class TasksVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataS
             taskfilter(status: "TO DO")
         }
         if(task_status_index == 1){
-            taskfilter(status: "IN_Progress")
+            taskfilter(status: "In Progress")
         }
         if(task_status_index == 2){
-            taskfilter(status: "DONE")
+            taskfilter(status: "Done")
         }
     }
     
@@ -96,8 +95,7 @@ class TasksVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataS
                 for aDic in arrayOfDic{
                     let user_id = (aDic["Projects_Groups_Community_Users_User_id"]as! NSString).doubleValue
                     let task_status = aDic["Task_status"]as! NSString
-                    let project_id = (aDic["Projects_Project_id"]as! NSString).doubleValue
-                    if(self.current_ptoject_id == project_id){
+                    if(self.current_user == user_id){
                         if(self.current_task_status  == task_status as String ){
                             self.arrayofnames.append(aDic["Task_name"] as! String)
                             self.arrayofnamesdescription.append(aDic["Task_description"] as! String)
