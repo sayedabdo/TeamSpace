@@ -15,7 +15,7 @@ class ProjectsVC: UIViewController ,UITableViewDelegate,UITableViewDataSource {
     
     @IBOutlet weak var tableview: UITableView!
     var current_user : Double  = 1
-    var current_community = 0
+    var current_community = 1
     var arrayofid : [Double] = []{
         didSet{
             tableview.reloadData()
@@ -76,7 +76,9 @@ class ProjectsVC: UIViewController ,UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "TasksVC") as! TasksVC
-       self.present(nextViewController, animated:true, completion:nil)
+        nextViewController.current_user = self.current_user
+        nextViewController.current_community = self.current_community
+        self.present(nextViewController, animated:true, completion:nil)
         
     }
     
@@ -87,6 +89,8 @@ class ProjectsVC: UIViewController ,UITableViewDelegate,UITableViewDataSource {
     @IBAction func addbtn(_ sender: Any) {
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let nextViewController = storyBoard.instantiateViewController(withIdentifier: "createmyprojectVC") as! createmyprojectVC
+        nextViewController.current_user = self.current_user
+        nextViewController.current_communityid = self.current_community
         self.present(nextViewController, animated:true, completion:nil)
     }
 

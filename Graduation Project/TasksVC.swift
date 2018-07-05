@@ -15,7 +15,7 @@ class TasksVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataS
     @IBOutlet weak var display_task_status: UISegmentedControl!
     @IBOutlet weak var collection: UICollectionView!
     var current_user : Double  = 1
-    var current_community = 0
+    var current_community = 1
     var task_status_index = 0
     var current_task_status = "TO DO"
     var arrayofid : [Double] = []{
@@ -54,10 +54,6 @@ class TasksVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataS
         return 1
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-//        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "TasksVC") as! TasksVC
-//        self.present(nextViewController, animated:true, completion:nil)
-        
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collection.dequeueReusableCell(withReuseIdentifier: "TasksCell", for: indexPath) as? TasksCell

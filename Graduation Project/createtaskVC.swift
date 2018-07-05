@@ -42,7 +42,18 @@ class createtaskVC: UIViewController ,UIImagePickerControllerDelegate,UINavigati
         didSet{
         }
     }
+    var selectedids : [Double] = []{
+        didSet{
+        }
+    }
+    var arrayoftasksid : [Double] = []{
+        didSet{
+        }
+    }
     override func viewDidLoad() {
+        
+        tableview.delegate = self
+        tableview.dataSource = self
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
@@ -56,7 +67,7 @@ class createtaskVC: UIViewController ,UIImagePickerControllerDelegate,UINavigati
             let params: [String : String] =
                 [    "Task_id"                                    : "\(1)",
                      "Task_name"                                  : "\(tasktname.text!)",
-                     "Project_description"                        : "\(tasktname.text!)",
+                     "Task_description"                           : "\(taskdescription.text!)",
                      "Task_deadlinne"                             : "\(deadline.date)",
                      "Task_status"                                : "\(task_status)",
                      "Projects_Project_id"                        : "\(1)",
@@ -67,10 +78,46 @@ class createtaskVC: UIViewController ,UIImagePickerControllerDelegate,UINavigati
             Alamofire.request(projecturl, method: .post, parameters: params, encoding: JSONEncoding.default)
                 .responseJSON { response in
                     print(response.result)
+            }
+        
+        
+        
+        let alertController = UIAlertController(title: "sdvsfv", message: "sdfsdfssdf", preferredStyle: .alert)
+        let OKAction = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction!) in
+            // Code in this block will trigger when OK button tapped.
+            let tasks_get_url = "http://team-space.000webhostapp.com/index.php/api/tasks/add"
+            Alamofire.request(tasks_get_url).responseJSON { response in
+                let result = response.result
+                print("the result is : \(result.value)")
+                if let arrayOfDic = result.value as? [Dictionary<String, AnyObject>] {
+                    for aDic in arrayOfDic{
+                            self.arrayoftasksid.append((aDic["Task_id"] as! NSString).doubleValue)
+                    }
+                }
+            }
+            //////
+            let member_task_url = "http://team-space.000webhostapp.com/index.php/api/task/members/add"
+            let params: [String : String] =
+                [    "magical_id"                                      :"\(1)",
+                     "member_id"                                       :"1",
+                     "Tasks_Task_id"                                   :"1",
+                     "Tasks_Projects_Project_id"                       :"1",
+                     "Tasks_Projects_Groups_Group_id"                  :"1",
+                     "Tasks_Projects_Groups_Community_Community_id"    :"1",
+                     "Tasks_Projects_Groups_Community_Users_User_id"   :"1"
+            ]
+            Alamofire.request(member_task_url, method: .post, parameters: params, encoding: JSONEncoding.default)
+                .responseJSON { response in
+                    print(response.result)
                     let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
                     let nextViewController = storyBoard.instantiateViewController(withIdentifier: "ProjectsVC") as! ProjectsVC
                     self.present(nextViewController, animated:true, completion:nil)
             }
+            //////
+        }
+        alertController.addAction(OKAction)
+        self.present(alertController, animated: true, completion:nil)
+        
       }
     @IBAction func changeimage(_ sender: Any) {
         let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
@@ -168,10 +215,13 @@ class createtaskVC: UIViewController ,UIImagePickerControllerDelegate,UINavigati
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
-        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "profile") as! profileVC
-        nextViewController.email =  arrayofemails[indexPath.row] as! String
-        self.present(nextViewController, animated:true, completion:nil)
+        let cell = tableview.dequeueReusableCell(withIdentifier: "membersintaskCell") as? membersintaskCell
+        var selectedCell:UITableViewCell = tableView.cellForRow(at: indexPath)!
+        selectedCell.contentView.backgroundColor = UIColor.green
+                self.selectedids.removeAll()
+                self.selectedids.append(arrayofid[indexPath.row])
+                print(self.selectedids.count)
+    
     }
     func getmember(){
         let member_get_url = "http://team-space.000webhostapp.com/index.php/api/members"

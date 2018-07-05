@@ -63,8 +63,8 @@ class createmyprojectVC: UIViewController ,UIImagePickerControllerDelegate,UINav
                     "Project_name"                     : "\(projectname.text!)",
                     "Project_description"              : "\(projectdescription.text!)",
                     "Groups_Group_id"                  : "\(current_group_id)",
-                    "Groups_Community_Community_id"    : "\(1)",
-                    "Groups_Community_Users_User_id"   : "\(1)"
+                    "Groups_Community_Community_id"    : "\(current_communityid)",
+                    "Groups_Community_Users_User_id"   : "\(current_user)"
                 ]
         Alamofire.request(projecturl, method: .post, parameters: params, encoding: JSONEncoding.default)
                 .responseJSON { response in
