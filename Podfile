@@ -9,5 +9,7 @@ target 'Graduation Project' do
 
   # Pods for Graduation Project
  pod 'Alamofire'
- pod 'Cloudinary', '~> 2.0'
+ pod 'Charts'
+ pod 'Cosmos', '~> 16.0'
+ 
  end
