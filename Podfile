@@ -9,7 +9,7 @@ target 'Graduation Project' do
 
   # Pods for Graduation Project
  pod 'Alamofire'
- pod 'Charts'
- pod 'Cosmos', '~> 16.0'
- 
+ pod 'SwiftCharts', '0.6'
+ pod 'StarRatingView'
+ pod 'SwiftyStarRatingView'
  end
